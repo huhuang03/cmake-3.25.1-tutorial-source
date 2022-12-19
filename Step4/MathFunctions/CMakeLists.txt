@@ -7,3 +7,4 @@ target_include_directories(MathFunctions
           )
 
 # TODO 3: Link to tutorial_compiler_flags
+target_link_libraries(MathFunctions tutorial_compiler_flags)
