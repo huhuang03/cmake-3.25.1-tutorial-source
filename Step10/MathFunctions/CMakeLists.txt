@@ -17,11 +17,8 @@ if(USE_MYMATH)
 
   # add the main library
 
-  add_library(SqrtLibrary STATIC mysqrt.cxx)
+  add_library(SqrtLibrary STATIC mysqrt.cxx ${CMAKE_CURRENT_BINARY_DIR}/Table.h)
 
-  # state that anybody linking to us needs to include the current source dir
-  # to find MathFunctions.h, while we don't.
-  # state that we depend on our binary dir to find Table.h
   target_link_libraries(SqrtLibrary
           PUBLIC tutorial_compiler_flags)
   target_include_directories(SqrtLibrary PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
