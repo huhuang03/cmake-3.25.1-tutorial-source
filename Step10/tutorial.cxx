@@ -5,10 +5,7 @@
 
 #include "TutorialConfig.h"
 
-// should we include the MathFunctions header?
-#ifdef USE_MYMATH
-#  include "MathFunctions.h"
-#endif
+#include "MathFunctions.h"
 
 int main(int argc, char* argv[])
 {
@@ -24,11 +21,7 @@ int main(int argc, char* argv[])
   const double inputValue = std::stod(argv[1]);
 
   // which square root function should we use?
-#ifdef USE_MYMATH
-  const double outputValue = mysqrt(inputValue);
-#else
-  const double outputValue = sqrt(inputValue);
-#endif
+  const double outputValue = mathfunctions::sqrt(inputValue);
 
   std::cout << "The square root of " << inputValue << " is " << outputValue
             << std::endl;

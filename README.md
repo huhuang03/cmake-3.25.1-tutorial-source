@@ -11,3 +11,9 @@ provides the complete solution for the previous step.
 
 ## Step8
 Adding a Custom Command and Generated File
+
+
+## Step9
+- `cpack -G xx`  to use xx generator
+- `cpack --help` to see all generator
+- `cpack --config CPackSourceConfig.cmake` to archive source tree

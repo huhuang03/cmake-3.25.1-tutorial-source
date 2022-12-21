@@ -16,18 +16,24 @@ target_compile_options(tutorial_compiler_flags INTERFACE
   "$<${msvc_cxx}:$<BUILD_INTERFACE:-W3>>"
 )
 
-# should we use our own math functions
-option(USE_MYMATH "Use tutorial provided math implementation" ON)
+# TODO 1: default build shared library
+option(BUILD_SHARED_LIBS "Build using shard libraries" ON)
 
 # configure a header file to pass some of the CMake settings
 # to the source code
 configure_file(TutorialConfig.h.in TutorialConfig.h)
 
+# TODO 2: remove origin USE_MYMATH option
+# should we use our own math functions
+#option(USE_MYMATH "Use tutorial provided math implementation" ON)
+
 # add the MathFunctions library
-if(USE_MYMATH)
-  add_subdirectory(MathFunctions)
-  list(APPEND EXTRA_LIBS MathFunctions)
-endif()
+#if(USE_MYMATH)
+#  add_subdirectory(MathFunctions)
+#  list(APPEND EXTRA_LIBS MathFunctions)
+#endif()
+add_subdirectory(MathFunctions)
+list(APPEND EXTRA_LIBS MathFunctions)
 
 # add the executable
 add_executable(Tutorial tutorial.cxx)
