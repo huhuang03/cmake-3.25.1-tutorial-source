@@ -17,3 +17,5 @@ Adding a Custom Command and Generated File
 - `cpack -G xx`  to use xx generator
 - `cpack --help` to see all generator
 - `cpack --config CPackSourceConfig.cmake` to archive source tree
+
+## Step11 Adding Export Configuration
