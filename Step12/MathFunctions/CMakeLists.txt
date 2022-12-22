@@ -1,7 +1,7 @@
 # add the library that runs
 add_library(MathFunctions MathFunctions.cxx)
-set_property(TARGET MathFunctions PROPERTIES VERSION "1.0.0")
-set_property(TARGET MathFunctions PROPERTIES SOVERSION "1")
+set_property(TARGET MathFunctions PROPERTY VERSION "1.0.0")
+set_property(TARGET MathFunctions PROPERTY SOVERSION "1")
 
 # state that anybody linking to us needs to include the current source dir
 # to find MathFunctions.h, while we don't.
